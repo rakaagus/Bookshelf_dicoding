@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookShelf</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav class="my-nav">
+      <div class="logo-brand">
+        <h3>BookShelf</h3>
+      </div>
+    </nav>
+
+    <div class="jumbotron"></div>
+
+    <div class="heading">
+      <h4>Selamat Datang Di BookShelf</h4>
+    </div>
+
+    <div class="content">
+      <div class="col-1">
+        <div class="informasi-pengguna container" id="info-pengguna">
+          <!--  -->
+          <form action="" id="form-person" class="formInputName d-block">
+            <div class="input-group">
+              <label for="inputNama">Masukan Nama Anda:</label>
+              <input type="text" class="nameInput" id="inputName" />
+            </div>
+
+            <div class="input-group">
+              <label for="inputHobi">Masukan Hobi Anda:</label>
+              <input type="text" class="nameInput" id="inputHobi" />
+            </div>
+
+            <input type="submit" class="btn" value="Submit Nama" />
+          </form>
+
+          <!--  -->
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="container describtion">
+          <h3>Describsi Aplikasi BookShelf!</h3>
+          <p class="soft-color">
+            web ini bertujuan untuk memisahkan buku yang menjadi 2 bagian
+            antaralain,
+          </p>
+          <ol>
+            <li>
+              <h4>Sudah Di baca</h4>
+              <p class="soft-color">
+                Buku yang sudah dibaca akan masuk ke rak Buku yang sudah di baca
+              </p>
+            </li>
+            <li>
+              <h4>Buku yang belum di baca</h4>
+              <p class="soft-color">
+                Buku yang belum di baca dan berencana akan di baca
+              </p>
+            </li>
+          </ol>
+        </div>
+      </div>
+      <div class="col-1">
+        <div class="container">
+          <h4 class="">Tambah Data Buku</h4>
+          <div class="add-icon">
+            <button class="open-modal">
+              <i class="fas fa-plus"></i>
+              <h4 class="label">Tambah Buku</h4>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="book-content">
+      <div class="text-heading primary-color">
+        <h2>Buku Yang Belum Selesai</h2>
+      </div>
+      <div class="col-3 isnotfinished" id="isnotfinished">
+        <!--  -->
+      </div>
+      <div class="text-heading secondary-color">
+        <h2>Buku Yang Sudah Selesai</h2>
+      </div>
+      <div class="col-3 isfinished" id="isfinished">
+        <!--  -->
+      </div>
+    </div>
+
+    <div class="bg-modal">
+      <div class="modal">
+        <div class="head-modal">
+          <h2>Tambah Data Buku</h2>
+          <svg
+            class="close-modal"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </div>
+        <div class="body-modal">
+          <form action="" class="" id="formTambahDataBuku">
+            <div class="input-group-2">
+              <label for="judulBuku">Judul</label>
+              <input
+                type="text"
+                name="inputJudulBuku"
+                id="inputJudul"
+                required
+              />
+            </div>
+            <div class="input-group-2">
+              <label for="authorBuku">Author</label>
+              <input
+                type="text"
+                name="inputAuthorBuku"
+                id="authorBuku"
+                required
+              />
+            </div>
+            <div class="input-group-2">
+              <label for="tahunBuku">Tahun</label>
+              <input
+                type="number"
+                name="inputTahunBuku"
+                id="tahunBuku"
+                maxlength="4"
+                required
+              />
+            </div>
+
+            <div class="input-checkbox">
+              <label for="inputBookIsComplete"
+                ><i class="far fa-question-circle"></i> Tandai Sudah Di
+                baca</label
+              >
+              <input
+                type="checkbox"
+                name="checkboxIsFinish"
+                id="inputBookIsComplete"
+              />
+            </div>
+
+            <button id="submitTambahBuku" type="submit">
+              Tambah data buku Yang
+              <span id="buttonTextIsComplete" class="text-span"
+                >Belum Dibaca</span
+              >
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <div class="footer">
+      <h3 class="footer-name">Create by Raka Agus Maulana</h3>
+    </div>
+
+    <script src="./assets/js/data.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/dom.js"></script>
+    <script src="./assets//js/makePerson.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+  </body>
+</html>

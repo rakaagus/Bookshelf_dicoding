@@ -1,0 +1,629 @@
+$background: #f0f0f0;
+$font-color: #222;
+$font-color-light: white;
+$primary-color: #235ddc;
+$secondary-color: #638eec;
+$transition: 0.2s;
+$box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+  0 15px 40px rgba(166, 173, 201, 0.2);
+$border: 0.1rem solid $primary-color;
+$scroll: smoth;
+
+@mixin font($size) {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: $size;
+  color: $font-color;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@345&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+html {
+  scroll-behavior: $scroll;
+}
+.col-1 {
+  padding: 0.5rem;
+  width: 30% !important;
+}
+
+.col-2 {
+  padding: 0.5rem;
+  width: 40% !important;
+}
+.col-3 {
+  width: 90% !important;
+  height: 15rem !important;
+  display: flex;
+  overflow-x: hidden;
+  gap: 0.5rem;
+  padding: 2rem 0.5rem;
+  flex-wrap: wrap;
+}
+
+.container {
+  background: #fff;
+  border-radius: 0.3rem;
+  box-shadow: $box-shadow;
+  padding: 1.5rem;
+}
+
+.d-none {
+  display: none;
+}
+
+.d-block {
+  display: block;
+}
+
+.informasi-pengguna {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  .avatar {
+    img {
+      width: 5rem !important;
+      height: 4.5rem !important;
+      border-radius: 50%;
+      background: $background;
+      padding: 4px;
+      margin-top: -10px !important;
+    }
+  }
+}
+
+.my-nav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  width: 100%;
+  height: 4.5rem;
+  box-shadow: $box-shadow;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  .logo-brand {
+    margin: 1.2rem 0 1.2rem 1.2rem;
+    h3 {
+      @include font(2.1rem);
+    }
+  }
+}
+
+.jumbotron {
+  background-image: url("../img/jumbotron.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  opacity: 0.8;
+  filter: brightness(40%);
+  position: relative;
+  top: -15rem;
+  background-size: cover;
+  z-index: -1;
+  background-color: yellowgreen;
+  width: 100%;
+  height: 35rem;
+}
+
+.heading {
+  margin-top: -30rem;
+  margin-left: 15rem;
+  color: white;
+  font-size: 5rem;
+}
+
+.content {
+  z-index: 4;
+  margin-top: 8rem;
+  width: 100%;
+  // background-color: black;
+  display: flex;
+}
+.primary-color {
+  color: $primary-color;
+}
+.secondary-color {
+  color: $secondary-color;
+}
+
+.isfinished {
+  background-color: white;
+  border: 0.1rem solid $secondary-color;
+  border-radius: 0.3rem;
+  transition: $transition ease-in;
+  &:hover {
+    box-shadow: $box-shadow;
+  }
+}
+
+.isnotfinished {
+  background-color: white;
+  border: 0.1rem solid $secondary-color;
+  border-radius: 0.3rem;
+  transition: $transition ease-in;
+  &:hover {
+    box-shadow: $box-shadow;
+  }
+}
+
+.book-content {
+  z-index: 4;
+  width: 100%;
+  margin: 8rem 0 2rem 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  .text-heading {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+}
+
+.formInputName {
+  padding-top: 1rem;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0.2rem;
+    gap: 0.7rem;
+    label {
+      font-size: 1.2rem;
+      color: $primary-color;
+      text-transform: capitalize;
+      font-weight: bold;
+    }
+    input[type="text"] {
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-bottom: $border;
+      outline: none;
+      padding-left: 0.2rem;
+      padding-top: 0.5rem;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.btn {
+  margin: 2rem 0 0 6rem;
+  background-color: $background;
+  border: $border;
+  width: 10rem;
+  height: 3rem;
+  color: $primary-color;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  transition: $transition ease-in;
+  &:hover {
+    background-color: $primary-color;
+    color: $background;
+    box-shadow: $box-shadow;
+  }
+}
+
+.user-profile {
+  .user-name {
+    padding-top: 1rem;
+    color: $primary-color;
+  }
+  .user-bio {
+    padding-top: 0.5rem;
+    color: $secondary-color;
+    font-size: 20px;
+  }
+  .jumlah-buku {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h3 {
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: $primary-color;
+    }
+    span {
+      padding-top: 1.2rem;
+      color: $secondary-color;
+      font-size: 2rem;
+    }
+  }
+}
+
+.bg-modal {
+  position: fixed;
+  top: -450%;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.25); /* Black w/ opacity */
+  z-index: 98;
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bg-modal.show {
+  top: 0;
+  transition: 0.5s;
+}
+
+.modal {
+  position: relative;
+  margin: auto;
+  width: 30%;
+  opacity: 1;
+  background-color: white;
+  z-index: 99;
+  height: hidden;
+  border-radius: 0.2rem;
+  padding: 7px;
+  margin: 12px;
+  box-shadow: 0px 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+.close-modal {
+  width: 35px;
+  font-weight: bold;
+  position: absolute;
+  top: -15px;
+  right: -10px;
+  padding: 7px;
+  background-color: white;
+  color: $primary-color;
+  cursor: pointer;
+  border-radius: 1rem;
+  box-shadow: 2px 2px 5px rgba(166, 173, 201, 0.2);
+}
+
+.body-modal {
+  form {
+    margin-top: 0.8rem;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-left: 5rem;
+    button {
+      background-color: $primary-color;
+      color: white;
+      border: 0;
+      border-radius: 0.5rem;
+      display: block;
+      width: 100%;
+      padding: 0.8rem;
+      cursor: pointer;
+      transition: $transition ease-in;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      &:hover {
+        background-color: $secondary-color;
+        box-shadow: $box-shadow;
+      }
+      .text-span {
+        color: white;
+        font-size: 0.75rem;
+        font-weight: bolder;
+        text-transform: uppercase;
+      }
+    }
+    .input-group-2 {
+      display: flex;
+      flex-direction: column;
+      padding-top: 0.5rem;
+      gap: 0.3rem;
+      label {
+        font-size: 1rem;
+        color: $secondary-color;
+        text-transform: capitalize;
+      }
+      input {
+        border-radius: 0.2rem;
+        border: 0.1rem solid $background;
+        width: 100%;
+        height: 2.5rem;
+        font-size: 1rem;
+        padding-left: 0.7rem;
+        padding-right: 0.5rem;
+        &:focus {
+          outline: none;
+          border: 0.1rem solid $secondary-color;
+          box-shadow: $box-shadow;
+        }
+      }
+      .input-checkbox {
+        display: flex;
+        align-items: center;
+        label {
+          color: $secondary-color;
+          font-weight: bold;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}
+
+.soft-color {
+  color: $secondary-color;
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+}
+.describtion {
+  h3 {
+    font-weight: bolder;
+    color: $primary-color;
+    font-size: 1.5rem;
+    padding-bottom: 0.5rem;
+  }
+  ol {
+    li {
+      color: $secondary-color;
+      h4 {
+        color: $secondary-color;
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+.add-icon {
+  padding: 1rem 10rem;
+  button {
+    display: flex;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.2rem;
+    border: none;
+    background-color: $background;
+    color: $primary-color;
+    font-size: 2rem;
+    padding: 0.5rem;
+    border: $border;
+    transition: $transition ease-in;
+    .label {
+      display: none;
+      font-size: 1rem;
+      transition: 0.1s ease-in;
+    }
+    &:hover {
+      box-shadow: $box-shadow;
+      background-color: $primary-color;
+      color: white;
+      width: 7rem;
+      .label {
+        display: block;
+      }
+    }
+  }
+}
+
+.box-iscomplete {
+  width: 25% !important;
+  height: 10rem;
+  background-color: $secondary-color;
+  border: 0.1rem solid $secondary-color;
+  border-radius: 0.3rem;
+  padding: 0.5rem 0;
+  color: white;
+}
+
+.box-isnotcomplete {
+  width: 25% !important;
+  height: 10rem;
+  background-color: $primary-color;
+  border: 0.1rem solid $primary-color;
+  border-radius: 0.3rem;
+  box-shadow: $box-shadow;
+  padding: 0.5rem 0;
+  color: white;
+}
+
+.judul-buku {
+  margin-top: 0.7rem;
+  margin-left: 1rem;
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+.penulis {
+  margin-top: 0.5rem;
+  margin-left: 1rem;
+  font-size: 1rem;
+}
+.tahun {
+  margin-top: 0.5rem;
+  margin-left: 1rem;
+  font-size: 1rem;
+}
+
+.finised {
+  margin-top: 0.4rem;
+  margin-left: 0.9rem;
+  margin-right: 0.9rem;
+  width: 6rem;
+  height: 3rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: bolder;
+  color: $primary-color;
+  background-color: white;
+  border: none;
+  border-radius: 0.2rem;
+  transition: $transition ease-in;
+  &:hover {
+    box-shadow: $box-shadow;
+    background-color: $background;
+  }
+}
+.delete {
+  margin-top: 0.4rem;
+  width: 6rem;
+  height: 3rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: bolder;
+  color: white;
+  background-color: rgb(230, 91, 144);
+  border: none;
+  border-radius: 0.2rem;
+  transition: $transition ease-in;
+  &:hover {
+    box-shadow: $box-shadow;
+    background-color: rgb(175, 73, 112);
+  }
+}
+.cancel {
+  margin-top: 0.4rem;
+  margin-left: 0.9rem;
+  margin-right: 0.9rem;
+  width: 6rem;
+  height: 3rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: bolder;
+  color: white;
+  background-color: $primary-color;
+  border: none;
+  border-radius: 0.2rem;
+  transition: $transition ease-in;
+  &:hover {
+    box-shadow: $box-shadow;
+    background-color: #0a3083;
+  }
+}
+.footer {
+  width: 100%;
+  background-color: $primary-color;
+  color: white;
+  font-size: 0.9rem;
+  text-align: center;
+  .footer-name {
+    text-transform: uppercase;
+    font-weight: bolder;
+    padding: 2rem;
+  }
+}
+// media Query
+@media screen and (max-width: 1300px) {
+  .box-iscomplete,
+  .box-isnotcomplete {
+    width: 60% !important;
+    height: 30rem !important;
+  }
+  .col-3 {
+    width: 90% !important;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+  }
+  .content,
+  .content-book {
+    flex-direction: column;
+  }
+  .col-1,
+  .col-2 {
+    width: 100% !important;
+  }
+
+  .heading {
+    font-size: 3rem;
+    margin-left: 4rem;
+  }
+  .modal {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .box-iscomplete,
+  .box-isnotcomplete {
+    width: 60% !important;
+    height: 30rem !important;
+  }
+  .col-3 {
+    width: 90% !important;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+  }
+  .content,
+  .content-book {
+    flex-direction: column;
+  }
+  .col-1,
+  .col-2 {
+    width: 100% !important;
+  }
+
+  .heading {
+    font-size: 3rem;
+    margin-left: 4rem;
+  }
+  .modal {
+    position: relative;
+    margin: auto;
+    width: 80%;
+    opacity: 1;
+    background-color: white;
+    z-index: 99;
+    height: hidden;
+    border-radius: 0.2rem;
+    padding: 7px;
+    margin: 12px;
+    box-shadow: 0px 10px 5px rgba(0, 0, 0, 0.2);
+  }
+}
+@media screen and (max-width: 600px) {
+  .box-iscomplete,
+  .box-isnotcomplete {
+    width: 60% !important;
+    height: 30rem !important;
+  }
+  .col-3 {
+    width: 90% !important;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+  }
+  .content,
+  .content-book {
+    flex-direction: column;
+  }
+  .col-1,
+  .col-2 {
+    width: 100% !important;
+  }
+  .heading {
+    font-size: 2rem;
+    margin-left: 5rem;
+  }
+  .modal {
+    position: relative;
+    margin: auto;
+    width: 80%;
+    opacity: 1;
+    background-color: white;
+    z-index: 99;
+    height: hidden;
+    border-radius: 0.2rem;
+    padding: 7px;
+    margin: 12px;
+    box-shadow: 0px 10px 5px rgba(0, 0, 0, 0.2);
+  }
+}
